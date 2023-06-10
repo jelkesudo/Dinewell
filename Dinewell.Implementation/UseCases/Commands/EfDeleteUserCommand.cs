@@ -19,7 +19,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _actor = actor;
         }
 
-        public int Id => 33;
+        public int Id => 20;
 
         public string Name => "Delete user (EF)";
 

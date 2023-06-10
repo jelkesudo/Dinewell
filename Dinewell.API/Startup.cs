@@ -72,6 +72,7 @@ namespace Dinewell.API
             services.AddTransient<ICreateFoodCategoryCommand, EfCreateFoodCategoryCommand>();
             services.AddTransient<ICreateRestaurantMenuCommand, EfCreateRestaurantMenuCommand>();
             services.AddTransient<ISearchUsersQuery, EfSearchUsersQuery>();
+            services.AddTransient<ISearchSpecificUsersQuery, EfSearchSpecificUsersQuery>();
             services.AddTransient<ISearchRestaurantSidesQuery, EfSearchRestaurantSidesQuery>();
             services.AddTransient<ISearchSpecificRestaurantSidesQuery, EfSearchSpecificRestaurantSidesQuery>();
             services.AddTransient<ICreateRestaurantFoodCategoryCommand, EfCreateRestaurantFoodCategoryCommand>();
@@ -87,7 +88,7 @@ namespace Dinewell.API
             services.AddTransient<IUpdateRestautantSideCommand, EfUpdateRestautantSideCommand>();
             services.AddTransient<ISearchSidesQuery, EfSearchSidesQuery>();
             services.AddTransient<ISearchSpecificSideQuery, EfSearchSpecificSideQuery>();
-            services.AddTransient<ISearchFoodCategoriesQuery, EfSearchFoodCategoriesQuery>();
+            services.AddTransient<ISearchFoodCategoriesQuery, EfUseCase>();
             services.AddTransient<ISearchMealsQuery, EfSearchMealsQuery>();
             services.AddTransient<ISearchSpecificMealQuery, EfSearchSpecificMealQuery>();
             services.AddTransient<ISearchRestaurantsQuery, EfSearchRestaurantsQuery>();
@@ -102,6 +103,15 @@ namespace Dinewell.API
             services.AddTransient<ICreateFoodCommand, EfCreateFoodCommand>();
             services.AddTransient<IUpdateFoodCommand, EfUpdateFoodCommand>();
             services.AddTransient<IDeleteRestaurantSideCommand, EfDeleteRestaurantSideCommand>();
+
+            services.AddTransient<IUserUpdateUserCommand, EfUserUpdateUserCommand>();
+            services.AddTransient<IUserSearchHisOrdersQuery, EfUserSearchHisOrdersQuery>();
+            services.AddTransient<IUserSearchRestaurantsQuery, EfUserSearchRestaurantsQuery>();
+            services.AddTransient<IUserSearchSpecificRestaurantsQuery, EfUserSearchSpecificRestaurantsQuery>();
+            services.AddTransient<IUserSearchFoodCategoriesQuery, EfUserSearchFoodCategoriesQuery>();
+            services.AddTransient<IUserSearchMealsQuery, EfUserSearchMealsQuery>();
+            services.AddTransient<IUserSearchSpecificFoodCategoryQuery, EfUserSearchSpecificFoodCategoryQuery>();
+            services.AddTransient<IUserSearchSpecificMealQuery, EfUserSearchSpecificMealQuery>();
 
             services.AddTransient<IEmailSender>(x =>
             new SmtpEmailSender(appSettings.EmailOptions.FromEmail,
@@ -177,7 +187,6 @@ namespace Dinewell.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dinewell.API v1"));
@@ -190,8 +199,6 @@ namespace Dinewell.API
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            //app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {

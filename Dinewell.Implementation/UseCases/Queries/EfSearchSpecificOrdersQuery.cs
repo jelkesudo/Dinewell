@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Dinewell.Implementation.UseCases.Queries
 {
-    public class EfSearchSpecificOrdersQuery : EfUseCase, ISearchSpecificOrdersQuery
+    public class EfSearchSpecificOrdersQuery : UseCases.EfUseCase, ISearchSpecificOrdersQuery
     {
         public EfSearchSpecificOrdersQuery(DinewellContext context) : base(context)
         {
         }
 
-        public int Id => 21;
+        public int Id => 38;
 
         public string Name => "Get Specific Order (EF)";
 

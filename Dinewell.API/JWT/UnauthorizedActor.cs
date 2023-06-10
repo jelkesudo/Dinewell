@@ -11,6 +11,6 @@ namespace Dinewell.API.JWT
 
         public string Username => "unauthorized";
 
-        public IEnumerable<int> AllowedUseCases => new List<int> {2};
+        public IEnumerable<int> AllowedUseCases => new List<int> {1};
     }
 }

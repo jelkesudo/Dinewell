@@ -15,21 +15,21 @@ namespace Dinewell.API.Controllers
     public class SideController : ControllerBase
     {
         // GET: api/<SideController>
-        [HttpGet]
+        [HttpGet("admin")]
         public IActionResult Get([FromQuery] SideSearch search, [FromServices] ISearchSidesQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, search));
         }
 
         // GET api/<SideController>/5
-        [HttpGet("{id}")]
+        [HttpGet("admin/{id}")]
         public IActionResult Get(int id, [FromServices] ISearchSpecificSideQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, id));
         }
 
         // POST api/<SideController>
-        [HttpPost]
+        [HttpPost("admin")]
         public IActionResult Post([FromBody] CreateSideDto dto, [FromServices] ICreateSidesCommand command, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, dto);
@@ -37,7 +37,7 @@ namespace Dinewell.API.Controllers
         }
 
         // PUT api/<SideController>/5
-        [HttpPut("{id}")]
+        [HttpPut("admin/{id}")]
         public IActionResult Put(int id, [FromBody] UpdateSideDTO dto, [FromServices] IUpdateSideCommand command, [FromServices] CommandHandler handler)
         {
             dto.Id = id;

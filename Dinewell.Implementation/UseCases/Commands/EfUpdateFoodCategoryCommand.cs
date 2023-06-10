@@ -21,7 +21,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _validator = validator;
         }
 
-        public int Id => 25;
+        public int Id => 21;
 
         public string Name => "Update food category (EF)";
 

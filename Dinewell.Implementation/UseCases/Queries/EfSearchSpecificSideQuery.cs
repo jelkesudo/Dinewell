@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Dinewell.Implementation.UseCases.Queries
 {
-    public class EfSearchSpecificSideQuery : EfUseCase, ISearchSpecificSideQuery
+    public class EfSearchSpecificSideQuery : UseCases.EfUseCase, ISearchSpecificSideQuery
     {
         public EfSearchSpecificSideQuery(DinewellContext context) : base(context)
         {
         }
 
-        public int Id => 14;
+        public int Id => 41;
 
         public string Name => "Search specific side (EF)";
 

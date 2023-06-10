@@ -20,14 +20,14 @@ namespace Dinewell.API.Controllers
     public class OrderController : ControllerBase
     {
         // GET: api/<OrderController>
-        [HttpGet]
+        [HttpGet("admin")]
         public IActionResult Get([FromQuery] OrderSearch search, [FromServices] ISearchOrdersQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, search));
         }
 
         // GET api/<OrderController>/5
-        [HttpGet("{id}")]
+        [HttpGet("admin/{id}")]
         public IActionResult Get(int id, [FromServices] ISearchSpecificOrdersQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, id));
@@ -46,18 +46,6 @@ namespace Dinewell.API.Controllers
             dto.UserId = int.Parse(userIdClaim.Value);
             handler.HandleCommand(command, dto);
             return StatusCode(201);
-        }
-
-        // PUT api/<OrderController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<OrderController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Dinewell.Implementation.UseCases.Queries
 {
-    public class EfSearchSpecificRestaurantSidesQuery : EfUseCase, ISearchSpecificRestaurantSidesQuery
+    public class EfSearchSpecificRestaurantSidesQuery : UseCases.EfUseCase, ISearchSpecificRestaurantSidesQuery
     {
         public EfSearchSpecificRestaurantSidesQuery(DinewellContext context) : base(context)
         {
         }
 
-        public int Id => 17;
+        public int Id => 39;
 
         public string Name => "Get specific restaurant food sides (EF)";
 
@@ -29,7 +29,7 @@ namespace Dinewell.Implementation.UseCases.Queries
 
             if (query == null)
             {
-                throw new EntityNotFoundException(search, nameof(FoodCategory));
+                throw new EntityNotFoundException(search, nameof(RestaurantFoodCategory));
             }
 
             return new RestaurantAllSidesDTO

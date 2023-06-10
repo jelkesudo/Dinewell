@@ -16,20 +16,34 @@ namespace Dinewell.API.Controllers
     public class RestaurantMealController : ControllerBase
     {
         // GET: api/<RestaurantMealController>
-        [HttpGet]
+        [HttpGet("admin")]
         public IActionResult Get([FromQuery] MealSearch search, [FromServices] ISearchMealsQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, search));
         }
+
+        // GET: api/<RestaurantMealController>
+        [HttpGet]
+        public IActionResult Get([FromQuery] MealSearch search, [FromServices] IUserSearchMealsQuery query, [FromServices] IQueryHandler handler)
+        {
+            return Ok(handler.HandleQuery(query, search));
+        }
+
         // GET api/<RestaurantMealController>/5
-        [HttpGet("{id}")]
+        [HttpGet("admin/{id}")]
         public IActionResult Get(int id, [FromServices] ISearchSpecificMealQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, id));
         }
 
+        [HttpGet("{id}")]
+        public IActionResult Get(int id, [FromServices] IUserSearchSpecificMealQuery query, [FromServices] IQueryHandler handler)
+        {
+            return Ok(handler.HandleQuery(query, id));
+        }
+
         // POST api/<RestaurantMealController>
-        [HttpPost]
+        [HttpPost("admin")]
         public IActionResult Post([FromBody] CreateMealDTO dto, [FromServices] ICreateRestaurantMenuCommand command, [FromServices] CreateRestaurantMenuValidator validator, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, dto);
@@ -37,7 +51,7 @@ namespace Dinewell.API.Controllers
         }
 
         // PUT api/<RestaurantMealController>/5
-        [HttpPut("{id}")]
+        [HttpPut("admin/{id}")]
         public IActionResult Put(int id, [FromBody] UpdateRestaurantMealDTO dto, [FromServices] IUpdateRestaurantMenuCommand command, [FromServices] CommandHandler handler)
         {
             dto.Id = id;
@@ -46,7 +60,7 @@ namespace Dinewell.API.Controllers
         }
 
         // DELETE api/<RestaurantMealController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("admin/{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteRestaurantMealCommand command, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, id);

@@ -24,7 +24,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _sender = sender;
         }
 
-        public int Id => 2;
+        public int Id => 1;
 
         public string Name => "Create User (EF)";
 

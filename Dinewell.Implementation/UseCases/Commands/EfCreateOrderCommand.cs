@@ -22,7 +22,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _validator = validator;
         }
 
-        public int Id => 22;
+        public int Id => 2;
 
         public string Name => "Add new order (EF)";
 

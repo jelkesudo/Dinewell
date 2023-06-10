@@ -20,7 +20,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _validator = validator;
         }
 
-        public int Id => 18;
+        public int Id => 14;
 
         public string Name => "Create restaurant side (EF)";
 

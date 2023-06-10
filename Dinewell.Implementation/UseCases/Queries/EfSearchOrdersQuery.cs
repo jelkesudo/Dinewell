@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Dinewell.Implementation.UseCases.Queries
 {
-    public class EfSearchOrdersQuery : EfUseCase, ISearchOrdersQuery
+    public class EfSearchOrdersQuery : UseCases.EfUseCase, ISearchOrdersQuery
     {
         public EfSearchOrdersQuery(DinewellContext context) : base(context)
         {
         }
 
-        public int Id => 20;
+        public int Id => 31;
 
         public string Name => "Get Orders (EF)";
 

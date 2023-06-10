@@ -15,21 +15,21 @@ namespace Dinewell.API.Controllers
     public class FoodController : ControllerBase
     {
         // GET: api/<FoodController>
-        [HttpGet]
+        [HttpGet("admin")]
         public IActionResult Get([FromQuery] SearchFoodDTO search, [FromServices] ISearchFoodsQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, search));
         }
 
         // GET api/<FoodController>/5
-        [HttpGet("{id}")]
+        [HttpGet("admin/{id}")]
         public IActionResult Get(int id, [FromServices] ISearchSpecificFoodsQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, id));
         }
 
         // POST api/<FoodController>
-        [HttpPost]
+        [HttpPost("admin")]
         public IActionResult Post([FromBody] CreateFoodDTO dto, [FromServices] ICreateFoodCommand command, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, dto);
@@ -37,7 +37,7 @@ namespace Dinewell.API.Controllers
         }
 
         // PUT api/<FoodController>/5
-        [HttpPut("{id}")]
+        [HttpPut("admin/{id}")]
         public IActionResult Put(int id, [FromBody] UpdateFoodDTO dto, [FromServices] IUpdateFoodCommand command, [FromServices] CommandHandler handler)
         {
             dto.Id = id;

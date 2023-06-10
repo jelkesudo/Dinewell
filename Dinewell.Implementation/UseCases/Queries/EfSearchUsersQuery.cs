@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Dinewell.Implementation.UseCases.Queries
 {
-    public class EfSearchUsersQuery : EfUseCase, ISearchUsersQuery
+    public class EfSearchUsersQuery : UseCases.EfUseCase, ISearchUsersQuery
     {
         public EfSearchUsersQuery(DinewellContext context) : base(context)
         {
         }
-        public int Id => 3;
+        public int Id => 43;
 
         public string Name => "Search users (EF)";
 
@@ -63,7 +63,7 @@ namespace Dinewell.Implementation.UseCases.Queries
                 FullName = $"{x.FirstName} {x.LastName}",
                 Username = x.Username,
                 Email = x.Email,
-                Address = x.Address.Name == null ? "" : $"{x.Address.Name} {x.Address.Number}"
+                Address = x.Address == null ? "" : $"{x.Address.Name} {x.Address.Number}"
             }).ToList();
 
             response.CurrentPage = search.Page.Value;

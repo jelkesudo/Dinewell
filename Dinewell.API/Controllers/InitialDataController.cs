@@ -229,33 +229,29 @@ namespace Dinewell.API.Controllers
 
                 var orders = new List<Order>
             {
-                new Order{User = users.ElementAt(0), OrderNumber = Guid.NewGuid()},
-                new Order{User = users.ElementAt(0), OrderNumber = Guid.NewGuid()},
-                new Order{User = users.ElementAt(1), OrderNumber = Guid.NewGuid()},
-                new Order{User = users.ElementAt(2), OrderNumber = Guid.NewGuid()},
+                new Order{User = users.ElementAt(0), OrderNumber = Guid.NewGuid(), OrderAddress = "Makedonska 17"},
+                new Order{User = users.ElementAt(0), OrderNumber = Guid.NewGuid(), OrderAddress = "Vuka Karadzica 222"},
+                new Order{User = users.ElementAt(1), OrderNumber = Guid.NewGuid(), OrderAddress = "Vojvode Misica 56"},
+                new Order{User = users.ElementAt(2), OrderNumber = Guid.NewGuid(), OrderAddress = "Jurija Gagarina 28"},
             };
 
                 var orderMeals = new List<OrderMeal>
             {
-                new OrderMeal{ Order = orders.First(), Meal = restaurantMenus.ElementAt(2)},
-                new OrderMeal{ Order = orders.First(), Meal = restaurantMenus.ElementAt(15)},
-                new OrderMeal{ Order = orders.ElementAt(1), Meal = restaurantMenus.ElementAt(12)},
-                new OrderMeal{ Order = orders.ElementAt(2), Meal = restaurantMenus.ElementAt(17)},
+                new OrderMeal{ Order = orders.First(), Meal = restaurantMenus.ElementAt(2), Quantity = 1},
+                new OrderMeal{ Order = orders.First(), Meal = restaurantMenus.ElementAt(15), Quantity = 1},
+                new OrderMeal{ Order = orders.ElementAt(1), Meal = restaurantMenus.ElementAt(12), Quantity = 1},
+                new OrderMeal{ Order = orders.ElementAt(2), Meal = restaurantMenus.ElementAt(17), Quantity = 2},
             };
-                var roleUseCases = new List<RoleUseCase>
-                {
-                    new RoleUseCase{Role = roles.ElementAt(1), UseCaseId = 4},
-                    new RoleUseCase{Role = roles.ElementAt(1), UseCaseId = 7},
-                    new RoleUseCase{Role = roles.ElementAt(1), UseCaseId = 10},
-                    new RoleUseCase{Role = roles.ElementAt(1), UseCaseId = 11},
-                    new RoleUseCase{Role = roles.ElementAt(1), UseCaseId = 22},
-                };
+                var roleUseCases = new List<RoleUseCase>();
 
-                for (int i = 0; i < 40; i++)
+                for (int i = 2; i <= 10; i++)
                 {
                     roleUseCases.Add(new RoleUseCase { Role = roles.ElementAt(1), UseCaseId = i });
                 }
-
+                for (int i = 2; i <= 43; i++)
+                {
+                    roleUseCases.Add(new RoleUseCase { Role = roles.ElementAt(0), UseCaseId = i });
+                }
                 _context.Restaurants.AddRange(restaurants);
                 _context.FoodCategories.AddRange(foodCategories);
                 _context.Foods.AddRange(foods);

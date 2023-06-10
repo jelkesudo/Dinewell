@@ -20,7 +20,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _validator = validator;
         }
 
-        public int Id => 38;
+        public int Id => 11;
 
         public string Name => "Create new Food (EF)";
 

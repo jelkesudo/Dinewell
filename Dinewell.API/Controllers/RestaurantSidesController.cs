@@ -17,21 +17,21 @@ namespace Dinewell.API.Controllers
     public class RestaurantSidesController : ControllerBase
     {
         // GET: api/<RestaurantSidesController>
-        [HttpGet]
+        [HttpGet("admin")]
         public IActionResult Get([FromQuery] RestaurantSideSearch search, [FromServices] ISearchRestaurantSidesQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, search));
         }
 
         // GET api/<RestaurantSidesController>/5
-        [HttpGet("{id}")]
+        [HttpGet("admin/{id}")]
         public IActionResult Get(int id, [FromServices] ISearchSpecificRestaurantSidesQuery query, [FromServices] IQueryHandler handler)
         {
             return Ok(handler.HandleQuery(query, id));
         }
 
         // POST api/<RestaurantSidesController>
-        [HttpPost]
+        [HttpPost("admin")]
         public IActionResult Post([FromBody] CreateRestaurantSideDTO dto, [FromServices] ICreateRestaurantSideCommand command, [FromServices] CreateRestaurantSidesValidator validator, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, dto);
@@ -39,7 +39,7 @@ namespace Dinewell.API.Controllers
         }
 
         // PUT api/<RestaurantSidesController>/5
-        [HttpPut("{id}")]
+        [HttpPut("admin/{id}")]
         public IActionResult Put(int id, [FromBody] UpdateRestaurantSideDTO dto, [FromServices] IUpdateRestautantSideCommand command, [FromServices] CommandHandler handler)
         {
             dto.Id = id;
@@ -48,7 +48,7 @@ namespace Dinewell.API.Controllers
         }
 
         // DELETE api/<RestaurantSidesController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("admin/{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteRestaurantSideCommand command, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, id);

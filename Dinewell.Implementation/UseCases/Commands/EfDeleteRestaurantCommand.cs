@@ -20,7 +20,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             _actor = actor;
         }
 
-        public int Id => 30;
+        public int Id => 16;
 
         public string Name => "Delete restaurant (EF)";
 

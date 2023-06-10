@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Dinewell.Implementation.UseCases.Queries
 {
-    public class EfSearchFoodCategoriesQuery : EfUseCase, ISearchFoodCategoriesQuery
+    public class EfUseCase : UseCases.EfUseCase, ISearchFoodCategoriesQuery
     {
-        public EfSearchFoodCategoriesQuery(DinewellContext context) : base(context)
+        public EfUseCase(DinewellContext context) : base(context)
         {
         }
 
-        public int Id => 5;
+        public int Id => 28;
 
         public string Name => "Get Food Categories (EF)";
 

@@ -18,7 +18,7 @@ namespace Dinewell.API.Controllers
     public class RestaurantFoodCategoryController : ControllerBase
     {
         // POST api/<RestaurantFoodCategoryController>
-        [HttpPost]
+        [HttpPost("admin")]
         public IActionResult Post([FromBody] CreateRestaurantFoodCategoryDTO dto, [FromServices] ICreateRestaurantFoodCategoryCommand command, [FromServices] CreateRestaurantFoodCategoriesValidator validator, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, dto);
@@ -26,7 +26,7 @@ namespace Dinewell.API.Controllers
         }
 
         // DELETE api/<RestaurantFoodCategoryController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("admin/{id}")]
         public IActionResult Delete(int id, [FromServices] IDeleteRestaurantFoodCategoryCommand command, [FromServices] CommandHandler handler)
         {
             handler.HandleCommand(command, id);
