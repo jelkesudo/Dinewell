@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinewell.Domain", "Dinewell.Domain\Dinewell.Domain.csproj", "{ED2FEFC7-EFFE-476F-A9F9-7CC81A48D1D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinewell.DataAccess", "Dinewell.DataAccess\Dinewell.DataAccess.csproj", "{192E9632-E1B9-4484-BA2C-64155AC64922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinewell.Application", "Dinewell.Application\Dinewell.Application.csproj", "{5228B027-3098-4786-8E8D-9288F613647C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinewell.Implementation", "Dinewell.Implementation\Dinewell.Implementation.csproj", "{4A9D7E8A-D9CB-4276-95B5-887CEE168EB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinewell.API", "Dinewell.API\Dinewell.API.csproj", "{DB81C8D2-3362-4813-BD28-04809AB96F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED2FEFC7-EFFE-476F-A9F9-7CC81A48D1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2FEFC7-EFFE-476F-A9F9-7CC81A48D1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2FEFC7-EFFE-476F-A9F9-7CC81A48D1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2FEFC7-EFFE-476F-A9F9-7CC81A48D1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192E9632-E1B9-4484-BA2C-64155AC64922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192E9632-E1B9-4484-BA2C-64155AC64922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192E9632-E1B9-4484-BA2C-64155AC64922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192E9632-E1B9-4484-BA2C-64155AC64922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5228B027-3098-4786-8E8D-9288F613647C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5228B027-3098-4786-8E8D-9288F613647C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5228B027-3098-4786-8E8D-9288F613647C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5228B027-3098-4786-8E8D-9288F613647C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A9D7E8A-D9CB-4276-95B5-887CEE168EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9D7E8A-D9CB-4276-95B5-887CEE168EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9D7E8A-D9CB-4276-95B5-887CEE168EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9D7E8A-D9CB-4276-95B5-887CEE168EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB81C8D2-3362-4813-BD28-04809AB96F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB81C8D2-3362-4813-BD28-04809AB96F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB81C8D2-3362-4813-BD28-04809AB96F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB81C8D2-3362-4813-BD28-04809AB96F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1A1CB17-B8F6-47AE-88FF-0039C0FBD848}
+	EndGlobalSection
+EndGlobal
