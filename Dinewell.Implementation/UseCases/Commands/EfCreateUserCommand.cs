@@ -84,7 +84,7 @@ namespace Dinewell.Implementation.UseCases.Commands
             using (var client = new SmtpClient("smtp.gmail.com", 587))
             {
                 client.EnableSsl = true;
-                client.Credentials = new NetworkCredential("filip.jelic.19.20@ict.edu.rs", "");
+                client.Credentials = new NetworkCredential("filip.jelic.19.20@ict.edu.rs", " ");
 
                 MailMessage mailMessage = new MailMessage(new MailAddress("filip.jelic.19.20@ict.edu.rs", mailTitle), new MailAddress(request.Email));
                 mailMessage.To.Add(new MailAddress(request.Email));
